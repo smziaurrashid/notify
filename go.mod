@@ -4,7 +4,7 @@ go 1.15
 
 require (
 	github.com/acarl005/stripansi v0.0.0-20180116102854-5a71ef0e047d
-	github.com/containrrr/shoutrrr v0.4.4
+	github.com/containrrr/shoutrrr v0.4.5-0.20210615143540-22dabf43004a
 	github.com/elazarl/goproxy v0.0.0-20210110162100-a92cc753f88e
 	github.com/fatih/color v1.12.0 // indirect
 	github.com/google/uuid v1.2.0 // indirect

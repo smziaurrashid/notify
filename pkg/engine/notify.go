@@ -3,10 +3,12 @@ package engine
 import (
 	"errors"
 	"fmt"
+	"net/url"
 	"strings"
 
 	"github.com/acarl005/stripansi"
 	"github.com/containrrr/shoutrrr"
+	"github.com/projectdiscovery/gologger"
 	"github.com/projectdiscovery/notify/pkg/types"
 )
 
@@ -29,6 +31,22 @@ func NewWithOptions(options *types.Options) (*Notify, error) {
 func (n *Notify) SendNotification(message string) error {
 	// strip unsupported color control chars
 	message = stripansi.Strip(message)
+
+	if n.options.Custom {
+		uri, err := url.Parse(n.options.CustomWebhookURL)
+		if err == nil {
+			uri.Scheme = "generic"
+			err = shoutrrr.Send(uri.String(), message)
+			if err != nil {
+				gologger.Error().Msgf("Custom Webhook: Error sending request: %s", err)
+				//return err
+			}
+		} else {
+			gologger.Error().Msgf("Custom Webhook: Error parsing webhook URL: %s", err)
+		}
+
+	}
+
 	if n.options.Slack {
 		slackTokens := strings.TrimPrefix(n.options.SlackWebHookURL, "https://hooks.slack.com/services/")
 		url := fmt.Sprintf("slack://%s", slackTokens)

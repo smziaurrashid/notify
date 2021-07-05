@@ -47,6 +47,9 @@ type Options struct {
 
 	Stdin bool
 	Data  string `yaml:"data,omitempty"`
+
+	Custom           bool   `yaml:"custom,omitempty"`
+	CustomWebhookURL string `yaml:"custom_webook_url,omitempty"`
 }
 
 type SMTPProvider struct {

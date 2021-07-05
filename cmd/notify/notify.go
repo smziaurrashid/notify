@@ -73,6 +73,8 @@ func readConfig() {
 	set.StringVar(&options.CLIMessage, "message-cli", types.DefaultCLIMessage, "CLI Message")
 	set.StringVar(&options.Data, "data", "", "file path to read data from")
 
+	set.BoolVar(&options.Custom, "custom", false, "Enable Custom Webhook")
+	set.StringVar(&options.CustomWebhookURL, "custom-webhook-url", "", "Custom Webhook URL")
 	_ = set.Parse()
 
 	if cfgFile != "" {
