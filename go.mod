@@ -8,7 +8,6 @@ require (
 	github.com/elazarl/goproxy v0.0.0-20210110162100-a92cc753f88e
 	github.com/fatih/color v1.12.0 // indirect
 	github.com/google/uuid v1.2.0 // indirect
-	github.com/json-iterator/go v1.1.11 // indirect
 	github.com/klauspost/compress v1.13.1 // indirect
 	github.com/mattn/go-isatty v0.0.13 // indirect
 	github.com/miekg/dns v1.1.43 // indirect
@@ -17,7 +16,7 @@ require (
 	github.com/projectdiscovery/collaborator v0.0.2
 	github.com/projectdiscovery/fastdialer v0.0.8 // indirect
 	github.com/projectdiscovery/goflags v0.0.5-0.20210625074658-a323e95c0c3b
-	github.com/projectdiscovery/gologger v1.1.4
+	github.com/projectdiscovery/gologger v1.1.10
 	github.com/projectdiscovery/proxify v0.0.4-0.20210217225554-5384e02d9d06
 	github.com/projectdiscovery/retryabledns v1.0.10 // indirect
 	github.com/projectdiscovery/retryablehttp-go v1.0.2-0.20210524224054-9fbe1f2b0727 // indirect
